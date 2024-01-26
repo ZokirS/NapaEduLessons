@@ -28,7 +28,7 @@ for (int i = 0; i < 10; i++)
         Course = $"Test333{i + 1}",
     });
 }
-var students2 = context.Students.FirstOrDefault(x=>x.FirstName == "default");
+/*var students2 = context.Students.FirstOrDefault(x=>x.FirstName == "default");
 if(students2 != null)
 {
     context.Students.Remove(students2);
@@ -44,3 +44,4 @@ foreach (var item in allStudents)
     Console.WriteLine($"FirstName: {item.FirstName} LastName: {item.LastName}");
 }
 Console.WriteLine(allStudents.ToQueryString());
+*/

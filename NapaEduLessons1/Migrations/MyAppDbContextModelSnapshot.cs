@@ -56,6 +56,28 @@ namespace NapaEduLessons1.Migrations
                     b.HasKey("StudentID");
 
                     b.ToTable("Students");
+
+                    b.HasData(
+                        new
+                        {
+                            StudentID = 1,
+                            Address = "default",
+                            BirthDate = new DateTime(2024, 1, 25, 14, 13, 15, 812, DateTimeKind.Local).AddTicks(8102),
+                            City = "default",
+                            Course = "default",
+                            FirstName = "default",
+                            LastName = "default"
+                        },
+                        new
+                        {
+                            StudentID = 2,
+                            Address = "default2",
+                            BirthDate = new DateTime(2024, 1, 24, 14, 13, 15, 812, DateTimeKind.Local).AddTicks(8113),
+                            City = "default2",
+                            Course = "default2",
+                            FirstName = "default2",
+                            LastName = "default2"
+                        });
                 });
 #pragma warning restore 612, 618
         }
