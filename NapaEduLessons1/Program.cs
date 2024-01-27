@@ -28,6 +28,18 @@ for (int i = 0; i < 10; i++)
         Course = $"Test333{i + 1}",
     });
 }
+
+var people = context.Person.SelectMany(x => context.Vehicle, (p, v) =>
+new
+{
+    OwnerName = p.Name,
+    CarName = $"{v.BrandName} - {v.Model}"
+});
+foreach (var person in people)
+{
+    Console.WriteLine($"Owner: {person.OwnerName} with car {person.CarName}");
+}
+Console.WriteLine(people.ToQueryString());
 /*var students2 = context.Students.FirstOrDefault(x=>x.FirstName == "default");
 if(students2 != null)
 {

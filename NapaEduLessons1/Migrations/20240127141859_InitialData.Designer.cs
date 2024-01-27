@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NapaEduLessons1.Context;
 
@@ -11,9 +12,10 @@ using NapaEduLessons1.Context;
 namespace NapaEduLessons1.Migrations
 {
     [DbContext(typeof(MyAppDbContext))]
-    partial class MyAppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240127141859_InitialData")]
+    partial class InitialData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -54,26 +56,6 @@ namespace NapaEduLessons1.Migrations
                         .IsUnique();
 
                     b.ToTable("Passport");
-
-                    b.HasData(
-                        new
-                        {
-                            PassportId = 1,
-                            BirthDate = new DateTime(1980, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            FirstName = "John",
-                            LastName = "Doe",
-                            PersonId = 2,
-                            Series = "AA11111"
-                        },
-                        new
-                        {
-                            PassportId = 2,
-                            BirthDate = new DateTime(1990, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            FirstName = "Jane",
-                            LastName = "Doe",
-                            PersonId = 1,
-                            Series = "BB22222"
-                        });
                 });
 
             modelBuilder.Entity("NapaEduLessons1.Models.Person", b =>
@@ -94,20 +76,6 @@ namespace NapaEduLessons1.Migrations
                     b.HasKey("PersonId");
 
                     b.ToTable("Person");
-
-                    b.HasData(
-                        new
-                        {
-                            PersonId = 1,
-                            Age = 43,
-                            Name = "Jane"
-                        },
-                        new
-                        {
-                            PersonId = 2,
-                            Age = 33,
-                            Name = "John"
-                        });
                 });
 
             modelBuilder.Entity("NapaEduLessons1.Models.Student", b =>
@@ -150,7 +118,7 @@ namespace NapaEduLessons1.Migrations
                         {
                             StudentID = 1,
                             Address = "default",
-                            BirthDate = new DateTime(2024, 1, 26, 19, 58, 18, 853, DateTimeKind.Local).AddTicks(9901),
+                            BirthDate = new DateTime(2024, 1, 26, 19, 18, 59, 54, DateTimeKind.Local).AddTicks(9608),
                             City = "default",
                             Course = "default",
                             FirstName = "default",
@@ -160,81 +128,11 @@ namespace NapaEduLessons1.Migrations
                         {
                             StudentID = 2,
                             Address = "default2",
-                            BirthDate = new DateTime(2024, 1, 25, 19, 58, 18, 853, DateTimeKind.Local).AddTicks(9913),
+                            BirthDate = new DateTime(2024, 1, 25, 19, 18, 59, 54, DateTimeKind.Local).AddTicks(9621),
                             City = "default2",
                             Course = "default2",
                             FirstName = "default2",
                             LastName = "default2"
-                        });
-                });
-
-            modelBuilder.Entity("NapaEduLessons1.Models.Vehicle", b =>
-                {
-                    b.Property<int>("VehicleId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("VehicleId"), 1L, 1);
-
-                    b.Property<string>("BrandName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("ManufacturedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("Mileage")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Model")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("PersonId")
-                        .HasColumnType("int");
-
-                    b.HasKey("VehicleId");
-
-                    b.HasIndex("PersonId");
-
-                    b.ToTable("Vehicle");
-
-                    b.HasData(
-                        new
-                        {
-                            VehicleId = 1,
-                            BrandName = "BMW",
-                            ManufacturedDate = new DateTime(2023, 1, 27, 19, 58, 18, 854, DateTimeKind.Local).AddTicks(182),
-                            Mileage = 100,
-                            Model = "M3",
-                            PersonId = 1
-                        },
-                        new
-                        {
-                            VehicleId = 2,
-                            BrandName = "Audi",
-                            ManufacturedDate = new DateTime(2014, 1, 27, 19, 58, 18, 854, DateTimeKind.Local).AddTicks(185),
-                            Mileage = 40000,
-                            Model = "A6",
-                            PersonId = 1
-                        },
-                        new
-                        {
-                            VehicleId = 3,
-                            BrandName = "Chevrolet",
-                            ManufacturedDate = new DateTime(2020, 12, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Mileage = 100,
-                            Model = "Camaro",
-                            PersonId = 2
-                        },
-                        new
-                        {
-                            VehicleId = 4,
-                            BrandName = "Tesla",
-                            ManufacturedDate = new DateTime(2023, 6, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Mileage = 180,
-                            Model = "Model S",
-                            PersonId = 2
                         });
                 });
 
@@ -249,23 +147,10 @@ namespace NapaEduLessons1.Migrations
                     b.Navigation("Person");
                 });
 
-            modelBuilder.Entity("NapaEduLessons1.Models.Vehicle", b =>
-                {
-                    b.HasOne("NapaEduLessons1.Models.Person", "Owner")
-                        .WithMany("Vehicles")
-                        .HasForeignKey("PersonId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Owner");
-                });
-
             modelBuilder.Entity("NapaEduLessons1.Models.Person", b =>
                 {
                     b.Navigation("Passport")
                         .IsRequired();
-
-                    b.Navigation("Vehicles");
                 });
 #pragma warning restore 612, 618
         }
