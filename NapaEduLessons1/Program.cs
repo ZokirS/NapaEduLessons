@@ -10,10 +10,7 @@ var student = new Student
 {
     FirstName = "default",
     LastName = "default",
-    BirthDate = DateTime.Now.AddDays(- 1),
-    Address = "default",
-    City = "default",
-    Course = "default",
+    BirthDate = DateTime.Now.AddDays(- 1)
 };
 
 for (int i = 0; i < 10; i++)
@@ -22,10 +19,7 @@ for (int i = 0; i < 10; i++)
     {
         FirstName = $"Test17877{i + 1}",
         LastName = $"Test1{i + 1}",
-        BirthDate = DateTime.Now.AddDays(-(i + 1)),
-        Address = $"asdadawdawd{i + 1}",
-        City = $"Test222{i + 1}",
-        Course = $"Test333{i + 1}",
+        BirthDate = DateTime.Now.AddDays(-(i + 1))
     });
 }
 
@@ -37,9 +31,18 @@ new
 });
 foreach (var person in people)
 {
-    Console.WriteLine($"Owner: {person.OwnerName} with car {person.CarName}");
+   // Console.WriteLine($"Owner: {person.OwnerName} with car {person.CarName}");
 }
-Console.WriteLine(people.ToQueryString());
+
+var studentss = context.Course.Include(x => x.Students).ToList();
+foreach (var item in studentss)
+{
+    Console.WriteLine($"Course: {item.CourseName} with students:");
+    foreach(var row  in item.Students)
+    {
+        Console.WriteLine($" - {row.FirstName} {row.LastName}");
+    }
+}
 /*var students2 = context.Students.FirstOrDefault(x=>x.FirstName == "default");
 if(students2 != null)
 {

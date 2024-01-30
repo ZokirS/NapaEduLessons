@@ -14,21 +14,14 @@ namespace NapaEduLessons1.Configurations
                     StudentID = 1,
                     FirstName = "default",
                     LastName = "default",
-                    BirthDate = DateTime.Now.AddDays(-1),
-                    Address = "default",
-                    City = "default",
-                    Course = "default",
+                    BirthDate = DateTime.Now.AddDays(-1)
                 },
                 new Student
                 {
                     StudentID = 2,
                     FirstName = "default2",
                     LastName = "default2",
-                    BirthDate = DateTime.Now.AddDays(-2),
-                    Address = "default2",
-                    City = "default2",
-                    Course = "default2",
-
+                    BirthDate = DateTime.Now.AddDays(-2)
                 });
         }
     }

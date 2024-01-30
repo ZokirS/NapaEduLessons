@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NapaEduLessons1.Context;
 
@@ -11,9 +12,10 @@ using NapaEduLessons1.Context;
 namespace NapaEduLessons1.Migrations
 {
     [DbContext(typeof(MyAppDbContext))]
-    partial class MyAppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240130141608_StudentsCourses")]
+    partial class StudentsCourses
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -55,26 +57,6 @@ namespace NapaEduLessons1.Migrations
                     b.HasKey("CourseId");
 
                     b.ToTable("Course");
-
-                    b.HasData(
-                        new
-                        {
-                            CourseId = 1,
-                            CourseName = "Math",
-                            StartDate = new DateTime(2024, 1, 30, 19, 52, 42, 31, DateTimeKind.Local).AddTicks(7559)
-                        },
-                        new
-                        {
-                            CourseId = 2,
-                            CourseName = "Biology",
-                            StartDate = new DateTime(2023, 10, 30, 19, 52, 42, 31, DateTimeKind.Local).AddTicks(7561)
-                        },
-                        new
-                        {
-                            CourseId = 3,
-                            CourseName = "Physics",
-                            StartDate = new DateTime(2024, 1, 30, 19, 52, 42, 31, DateTimeKind.Local).AddTicks(7562)
-                        });
                 });
 
             modelBuilder.Entity("NapaEduLessons1.Models.Passport", b =>
@@ -192,14 +174,14 @@ namespace NapaEduLessons1.Migrations
                         new
                         {
                             StudentID = 1,
-                            BirthDate = new DateTime(2024, 1, 29, 19, 52, 42, 31, DateTimeKind.Local).AddTicks(7147),
+                            BirthDate = new DateTime(2024, 1, 29, 19, 16, 6, 380, DateTimeKind.Local).AddTicks(3735),
                             FirstName = "default",
                             LastName = "default"
                         },
                         new
                         {
                             StudentID = 2,
-                            BirthDate = new DateTime(2024, 1, 28, 19, 52, 42, 31, DateTimeKind.Local).AddTicks(7168),
+                            BirthDate = new DateTime(2024, 1, 28, 19, 16, 6, 380, DateTimeKind.Local).AddTicks(3753),
                             FirstName = "default2",
                             LastName = "default2"
                         });
@@ -241,7 +223,7 @@ namespace NapaEduLessons1.Migrations
                         {
                             VehicleId = 1,
                             BrandName = "BMW",
-                            ManufacturedDate = new DateTime(2023, 1, 30, 19, 52, 42, 31, DateTimeKind.Local).AddTicks(7476),
+                            ManufacturedDate = new DateTime(2023, 1, 30, 19, 16, 6, 380, DateTimeKind.Local).AddTicks(4014),
                             Mileage = 100,
                             Model = "M3",
                             PersonId = 1
@@ -250,7 +232,7 @@ namespace NapaEduLessons1.Migrations
                         {
                             VehicleId = 2,
                             BrandName = "Audi",
-                            ManufacturedDate = new DateTime(2014, 1, 30, 19, 52, 42, 31, DateTimeKind.Local).AddTicks(7479),
+                            ManufacturedDate = new DateTime(2014, 1, 30, 19, 16, 6, 380, DateTimeKind.Local).AddTicks(4017),
                             Mileage = 40000,
                             Model = "A6",
                             PersonId = 1
