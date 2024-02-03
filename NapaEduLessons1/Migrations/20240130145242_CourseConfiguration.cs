@@ -46,16 +46,7 @@ namespace NapaEduLessons1.Migrations
                 keyValue: 2,
                 column: "ManufacturedDate",
                 value: new DateTime(2014, 1, 30, 19, 52, 42, 31, DateTimeKind.Local).AddTicks(7479));
-            migrationBuilder.InsertData(
-               table: "CourseStudent",
-               columns: new[] { "CoursesCourseId", "StudentsStudentID" },
-               values: new object[,]
-               {
-                    {1, 1 },
-                    {2, 1 },
-                    {2, 2 },
-                    {3, 2 },
-               });
+        
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

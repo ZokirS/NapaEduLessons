@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NapaEduLessons1.Configurations;
 using NapaEduLessons1.Models;
+using System.Net;
 
 namespace NapaEduLessons1.Context
 {
@@ -34,11 +35,14 @@ namespace NapaEduLessons1.Context
                 .HasMany(p => p.Courses)
                 .WithMany(c => c.Students);
 
+            IPAddress address = new IPAddress(new byte[] { 127, 0, 0, 1 });
+
             modelBuilder.ApplyConfiguration(new StudentConfiguration());
             modelBuilder.ApplyConfiguration(new PeopleConfiguration());
             modelBuilder.ApplyConfiguration(new PassportConfigurtion());
             modelBuilder.ApplyConfiguration(new VehiclesConfiguration());
             modelBuilder.ApplyConfiguration(new CourseConfiguration());
+            
         }
         public DbSet<Student>? Students { get; set; }
         public DbSet<Person>  Person { get; set; }
