@@ -43,6 +43,17 @@ using (var client = new HttpClient())
         new JsonSerializerOptions { PropertyNamingPolicy = policy});
 }
 
+var ds = new DataStore<string>();
+ds.Metho<int>("");
+
+class DataStore<T>
+{
+    public T Data { get; set; }
+
+    public void Metho<M>(T data) { 
+    
+    }
+}
 
 public class Rootobject
 {
