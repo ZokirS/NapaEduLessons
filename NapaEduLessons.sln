@@ -5,7 +5,9 @@ VisualStudioVersion = 17.7.34009.444
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NapaEduLessons1", "NapaEduLessons1\NapaEduLessons1.csproj", "{99A6D2D1-AE51-450F-BC39-D144D3F9DC23}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebProgramming", "WebProgramming\WebProgramming.csproj", "{1325D553-4C2B-47CD-BDB4-3379268D8BDF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebProgramming", "WebProgramming\WebProgramming.csproj", "{1325D553-4C2B-47CD-BDB4-3379268D8BDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NapaEduCSharpBasics", "NapaEduCSharpBasics\NapaEduCSharpBasics.csproj", "{B2C3D75F-E54C-4FD6-A790-8DE7AFE93B22}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{1325D553-4C2B-47CD-BDB4-3379268D8BDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1325D553-4C2B-47CD-BDB4-3379268D8BDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1325D553-4C2B-47CD-BDB4-3379268D8BDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2C3D75F-E54C-4FD6-A790-8DE7AFE93B22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2C3D75F-E54C-4FD6-A790-8DE7AFE93B22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2C3D75F-E54C-4FD6-A790-8DE7AFE93B22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2C3D75F-E54C-4FD6-A790-8DE7AFE93B22}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
