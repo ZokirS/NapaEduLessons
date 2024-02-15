@@ -37,3 +37,23 @@ DoSomeOperation(3, 9, Multiply);
 Func<int, int> func4 = x=>Math.Abs(x);
 
 Console.WriteLine(func4(-65));
+
+ List<int> SortedByCondition( List<int> list, Func<int, bool> condition)
+{
+    var newList = new List<int>();
+    foreach (int x in list)
+    {
+        if (condition(x))
+        {
+            newList.Add(x);
+        }
+    }
+    return newList;
+}
+
+
+var list = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+Func<int, bool> func5 = x => x % 4 == 0;
+var res = list.SortedByCondition(func5);
+foreach(long x in res)
+    Console.WriteLine(x);

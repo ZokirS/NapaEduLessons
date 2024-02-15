@@ -10,6 +10,19 @@
 
         public static void DatetimeMethod(this DateTime dateTime, int yo)
         => dateTime.AddYears(-yo);
-        
+
+
+        public static List<int>  SortedByCondition(this List<int> list, Func<int, bool> condition)
+        {
+            var newList = new List<int>();
+            foreach (int x in list)
+            {
+                if (condition(x))
+                {
+                    newList.Add(x);
+                }
+            }
+            return newList;
+        }
     }
 }
