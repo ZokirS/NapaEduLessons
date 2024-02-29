@@ -60,3 +60,10 @@ foreach (var item in allStudents)
 }
 Console.WriteLine(allStudents.ToQueryString());
 */
+
+async Task<int> Method1(int num)
+{
+    for (int i = 1; i <= num; i++)
+        num *= i;
+    return num;
+}

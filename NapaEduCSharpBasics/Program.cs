@@ -53,7 +53,7 @@ Console.WriteLine(func4(-65));
 
 
 var list = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-Func<int, bool> func5 = x => x % 4 == 0;
-var res = list.SortedByCondition(func5);
+
+var res = list.SortedByCondition(x => x % 2 == 0);
 foreach(long x in res)
     Console.WriteLine(x);
