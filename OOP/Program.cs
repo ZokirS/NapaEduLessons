@@ -1,2 +1,42 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿
+var logic = new CustomerBusinessLogic();
+logic.GetCustomerName(3);
+public interface ICustomerDataAccess
+{
+    string GetCustomerName(int id);
+}
+
+public class CustomerDataAccess : ICustomerDataAccess
+{
+    public CustomerDataAccess()
+    {
+    }
+
+    public string GetCustomerName(int id)
+    {
+        return "Dummy Customer Name";
+    }
+}
+
+public class DataAccessFactory
+{
+    public static ICustomerDataAccess GetCustomerDataAccessObj()
+    {
+        return new CustomerDataAccess();
+    }
+}
+
+public class CustomerBusinessLogic
+{
+    ICustomerDataAccess _custDataAccess;
+
+    public CustomerBusinessLogic()
+    {
+        _custDataAccess = DataAccessFactory.GetCustomerDataAccessObj();
+    }
+
+    public string GetCustomerName(int id)
+    {
+        return _custDataAccess.GetCustomerName(id);
+    }
+}
