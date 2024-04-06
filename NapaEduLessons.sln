@@ -15,7 +15,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AayncProject", "AayncProjec
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherApp", "WeatherApp\WeatherApp.csproj", "{85AECCDC-7C83-4CAB-883F-DD70FF7A3F86}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson2", "Lesson2\Lesson2.csproj", "{80731FE3-78ED-43CB-8D04-61FC44ACBDF1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lesson2", "Lesson2\Lesson2.csproj", "{80731FE3-78ED-43CB-8D04-61FC44ACBDF1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPNETEmpty", "ASPNETEmpty\ASPNETEmpty.csproj", "{9C618617-46BE-4716-BAA3-B7D4EBCF5B44}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{80731FE3-78ED-43CB-8D04-61FC44ACBDF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80731FE3-78ED-43CB-8D04-61FC44ACBDF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80731FE3-78ED-43CB-8D04-61FC44ACBDF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C618617-46BE-4716-BAA3-B7D4EBCF5B44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C618617-46BE-4716-BAA3-B7D4EBCF5B44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C618617-46BE-4716-BAA3-B7D4EBCF5B44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C618617-46BE-4716-BAA3-B7D4EBCF5B44}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -5,7 +5,7 @@ using System.Text.Json;
 
 var student = new Student
 {
-    Name = "Hojiakbar",
+    FirstName = "Hojiakbar",
     BirtDate = DateTime.Now,
 };
 
