@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
+
+
 app.MapGet("/watch", () => "Hello World!");
 app.MapGet("/student", () =>
 {
@@ -33,6 +35,12 @@ app.MapPost("/student", ([FromQuery]string name) =>
 
 //JSON Body
 app.MapPost("/student", ([FromBody] Student student) =>
+{
+    return Results.Ok(student);
+});
+
+
+app.MapPut("/student", ([FromQuery] string studentName, [FromBody] Student student) =>
 {
     return Results.Ok(student);
 });
