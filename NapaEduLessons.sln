@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lesson2", "Lesson2\Lesson2.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPNETEmpty", "ASPNETEmpty\ASPNETEmpty.csproj", "{9C618617-46BE-4716-BAA3-B7D4EBCF5B44}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPNETWithEF", "ASPNETWithEF\ASPNETWithEF.csproj", "{14256746-B6FA-401E-B158-99EF70FCEA3E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPNETWithEF", "ASPNETWithEF\ASPNETWithEF.csproj", "{14256746-B6FA-401E-B158-99EF70FCEA3E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplicationAPIBasic", "WebApplicationAPIBasic\WebApplicationAPIBasic.csproj", "{72C6E08F-CD0F-40EE-A803-81B69B423E44}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{14256746-B6FA-401E-B158-99EF70FCEA3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14256746-B6FA-401E-B158-99EF70FCEA3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14256746-B6FA-401E-B158-99EF70FCEA3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72C6E08F-CD0F-40EE-A803-81B69B423E44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72C6E08F-CD0F-40EE-A803-81B69B423E44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72C6E08F-CD0F-40EE-A803-81B69B423E44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72C6E08F-CD0F-40EE-A803-81B69B423E44}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

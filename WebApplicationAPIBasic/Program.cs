@@ -1,0 +1,18 @@
+using Microsoft.EntityFrameworkCore;
+using WebApplicationAPIBasic.Context;
+
+var builder = WebApplication.CreateBuilder(args);
+var connString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddDbContext<StudentContext>(context =>
+{
+    context.UseSqlServer(connString);
+});
+
+var app = builder.Build();
+
+app.UseHttpsRedirection();
+app.MapControllers();
+
+app.Run();
