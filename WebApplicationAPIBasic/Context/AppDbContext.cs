@@ -3,11 +3,11 @@ using WebApplicationAPIBasic.Models;
 
 namespace WebApplicationAPIBasic.Context
 {
-    public class StudentContext: DbContext
+    public class AppDbContext: DbContext
     {
         public DbSet<Student> Students { get; set; }
 
-        public StudentContext(DbContextOptions<StudentContext> options): base(options) { }
+        public AppDbContext(DbContextOptions<AppDbContext> options): base(options) { }
         
     }
 }

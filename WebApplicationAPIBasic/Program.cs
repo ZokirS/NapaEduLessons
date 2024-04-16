@@ -5,7 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 var connString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddDbContext<StudentContext>(context =>
+builder.Services.AddDbContext<AppDbContext>(context =>
 {
     context.UseSqlServer(connString);
 });

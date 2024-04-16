@@ -8,9 +8,9 @@ namespace WebApplicationAPIBasic.Controllers
     [ApiController]
     public class StudentController : ControllerBase
     {
-        private readonly StudentContext _studentContext;
+        private readonly AppDbContext _studentContext;
 
-        public StudentController(StudentContext studentContext)
+        public StudentController(AppDbContext studentContext)
         {
             _studentContext = studentContext;
         }
@@ -53,6 +53,41 @@ namespace WebApplicationAPIBasic.Controllers
         public ActionResult GetAction()
         {
             return RedirectToAction(nameof(Students));
+        }
+
+        [HttpPut]
+        public ActionResult<bool> UpdateStudent([FromQuery] int id, [FromBody]Student student)
+        {
+            var result = _studentContext.Students.Find(id);
+            if(result != null)
+            {
+                result.FirstName = student.FirstName;
+                result.LastName = student.LastName;
+                result.BirthDate = student.BirthDate;
+                _studentContext.Students.Update(result);
+                _studentContext.SaveChanges();
+                return Ok(true);
+            }
+            else
+            {
+                return NotFound(false);
+            }
+        }
+
+        [HttpDelete]
+        public ActionResult Delete(int id)
+        {
+            var result = _studentContext.Students.Find(id);
+            if (result != null)
+            {
+                _studentContext.Students.Remove(result);
+                _studentContext.SaveChanges();
+                return Ok();
+            }
+            else
+            {
+                return NotFound();
+            }
         }
     }
 }
