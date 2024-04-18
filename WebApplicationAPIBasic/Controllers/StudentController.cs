@@ -15,12 +15,12 @@ namespace WebApplicationAPIBasic.Controllers
             _studentContext = studentContext;
         }
 
-        [HttpGet]
-        public ActionResult<IEnumerable<Student>> Students()
-        {
-            var students = _studentContext.Students;
-            return Ok(students);
-        }
+        //[HttpGet]
+        //public ActionResult<IEnumerable<Student>> GetStudents()
+        //{
+        //    var students = _studentContext.Students;
+        //    return Ok(students);
+        //}
 
         [HttpGet("{id}")]
         public ActionResult<Student> GetStudent(int id)
@@ -52,7 +52,7 @@ namespace WebApplicationAPIBasic.Controllers
         [HttpGet]
         public ActionResult GetAction()
         {
-            return RedirectToAction(nameof(Students));
+            return RedirectToAction(nameof(GetStudents));
         }
 
         [HttpPut]
@@ -88,6 +88,36 @@ namespace WebApplicationAPIBasic.Controllers
             {
                 return NotFound();
             }
+        }
+
+        [HttpGet]
+        public ActionResult<IQueryable<Student>> GetStudents([FromQuery]string name = null, [FromQuery] string birthDate= null,
+            [FromQuery] int page = 1, [FromQuery] int pageSize = 4)
+        {
+            var students = _studentContext.Students.OrderBy(s=>s.BirthDate).ToList();
+            if(name != null)
+            {
+                students = students.Where(x=>x.FirstName.Equals(name)).ToList();
+            }
+            if(birthDate != null && birthDate.Contains("desc"))
+            {
+                students = students.OrderByDescending(students => students.BirthDate).ToList() ;
+            }
+
+            var totalCount = students.Count();
+            var totalPages = (int)Math.Ceiling((double)totalCount / pageSize);
+
+            students = students.Skip((page - 1) * pageSize).Take(pageSize).ToList();
+
+            var result = new
+            {
+                TotalCount = totalCount,
+                TotalPages = totalPages,
+                CurrentPage = page,
+                PageSize = pageSize,
+                Students = students
+            };
+            return Ok(result);
         }
     }
 }
