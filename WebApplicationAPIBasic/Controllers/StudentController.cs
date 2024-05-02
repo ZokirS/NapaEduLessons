@@ -74,17 +74,17 @@ namespace WebApplicationAPIBasic.Controllers
         }
 
         //[HttpGet]
-        //public ActionResult<IQueryable<Student>> GetStudents([FromQuery]string name = null, [FromQuery] string birthDate= null,
+        //public ActionResult<IQueryable<Student>> GetStudents([FromQuery] string name = null, [FromQuery] string birthDate = null,
         //    [FromQuery] int page = 1, [FromQuery] int pageSize = 4)
         //{
-        //    var students = _context.Students.OrderBy(s=>s.BirthDate).ToList();
-        //    if(name != null)
+        //    var students = _context.Students.OrderBy(s => s.BirthDate).ToList();
+        //    if (name != null)
         //    {
-        //        students = students.Where(x=>x.FirstName.Equals(name)).ToList();
+        //        students = students.Where(x => x.FirstName.Equals(name)).ToList();
         //    }
-        //    if(birthDate != null && birthDate.Contains("desc"))
+        //    if (birthDate != null && birthDate.Contains("desc"))
         //    {
-        //        students = students.OrderByDescending(students => students.BirthDate).ToList() ;
+        //        students = students.OrderByDescending(students => students.BirthDate).ToList();
         //    }
 
         //    var totalCount = students.Count();
