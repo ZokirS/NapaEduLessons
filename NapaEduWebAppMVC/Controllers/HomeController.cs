@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using NapaEduWebAppMVC.Models;
 using System.Diagnostics;
+using System.Text;
 
 namespace NapaEduWebAppMVC.Controllers
 {
@@ -24,9 +25,11 @@ namespace NapaEduWebAppMVC.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        public ActionResult Index([FromQuery]string? text)
+        public ActionResult Index(Person person)
         {
-            return View( text);
+            ViewData["info"] = "Hello from controller";
+            ViewBag.info = "hello from viewbag";
+            return View(person);
         }
 
         public IActionResult CustomResult(string? text)

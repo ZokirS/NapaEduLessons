@@ -1,9 +1,11 @@
-﻿@model string
+﻿@model Person
 @{
     ViewData["Title"] = "Home Page";
+    var time = DateTime.Now;
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome @Model</h1>
+    <h2>@ViewBag.info</h2>
+    <h1 class="display-4">Welcome with Name: @Model.Name, age: @time</h1>
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
