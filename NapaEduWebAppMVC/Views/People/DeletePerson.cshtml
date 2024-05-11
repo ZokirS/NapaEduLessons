@@ -1,0 +1,19 @@
+﻿@model Person
+
+<form action="DeletePerson" method="post">
+    <input asp-for="Id" hidden />
+    <div class="form-control">
+
+        <label  asp-for="Name">Name</label>
+        <input asp-for="Name" type="text"  readonly/>
+    </div>
+    <div class="form-control">
+
+        <label asp-for="Age">Age</label>
+        <input asp-for="Age" type="number" readonly />
+    </div>
+    <div class="form-control">
+        <button class="btn btn-danger" type="submit">Delete</button>
+    </div>
+</form>
+

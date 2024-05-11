@@ -1,8 +1,17 @@
+using Microsoft.EntityFrameworkCore;
+using NapaEduWebAppMVC.Context;
+using NapaEduWebAppMVC.Services;
+
 var builder = WebApplication.CreateBuilder(args);
+var connString = builder.Configuration.GetConnectionString("DefaultConnection");
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
+builder.Services.AddScoped<IPeopleService, PeopleService>();
+builder.Services.AddDbContext<AppDbContext>(context =>
+{
+    context.UseSqlServer(connString);
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

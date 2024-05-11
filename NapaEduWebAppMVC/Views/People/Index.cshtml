@@ -1,0 +1,57 @@
+﻿@model ICollection<Person>
+@{
+
+}
+
+@if(Model is null || Model.Count == 0)
+{
+    <p>Bu yerd hech qanaqa malumot</p>
+    <br />
+    <a class="btn btn-primary" href="@Url.Action("AddPerson", "People")">Add Person</a>
+}
+else
+{
+    <table>
+         <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Edit Person</th>
+                <th>Delete Person</th>
+                <th>
+                    <a class="btn btn-primary" href="@Url.Action("AddPerson", "People")">Add Person</a>
+                </th>
+         </tr>
+            @foreach (var person in Model)
+            {
+                <tr>
+                    <td>@person.Id</td>
+                    <td>@person.Name</td>
+                    <td>@person.Age</td>
+                    @*                 <td>@Html.ActionLink("Edit", "EditPerson", new { id = person.Id }) | @Html.ActionLink("Delete", "DeletePerson", new{id=person.Id})</td *@
+                    <td><a class="btn btn-secondary" href="@Url.Action("EditPerson","People",new{id = person.Id})">Edit person</a></td>
+                    <td><a class="btn btn-danger" href="@Url.Action("DeletePerson","People",new {id = person.Id})">Delete Person</a></td>
+
+                </tr>
+            }
+    </table>
+}
+
+
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
